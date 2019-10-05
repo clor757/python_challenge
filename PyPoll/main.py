@@ -16,11 +16,16 @@ with open(csvpath, newline='') as csvfile:
     # Read the header row first (skip this step if there is now header)
     csv_header = next(csvreader)
     
+    # Creates an empty list called poll to store our data from our csv file
     poll = []
+    
+    # Creates a counter to find the total votes
     totalv = 0
     
+    # Creates an empty list called name to store all of the candidates for the poll
     name = []
     
+    # Creates counters to find the total amount of votes for each candidates
     Kv = 0
     Cv = 0
     Lv = 0
@@ -30,13 +35,13 @@ with open(csvpath, newline='') as csvfile:
         poll.append(row)
         if row[2] not in  name:
             name.append(row[2])
-        if row[2] == "Khan":
+        if row[2] == name[0]:
             Kv = Kv + 1
-        elif row[2] == "Correy":
+        elif row[2] == name[1]:
             Cv = Cv + 1
-        elif row[2] == "Li":
+        elif row[2] == name[2]:
             Lv = Lv + 1
-        elif row[2] == "O'Tooley":
+        elif row[2] == name[3]:
             Ov = Ov + 1
             
     Totalv = len(poll)
